@@ -67,7 +67,8 @@ def test_greeting() -> None:
     assert greeting("Andy") == "Hello Andy!"
 
     # DEMO: Type checking is static not runtime!
-    assert greeting(42) == "Hello 42!"
+    expected = "Hello 42!"
+    assert greeting(42) == expected
 
 
 def greetings(names: Iterable[str]) -> List[str]:

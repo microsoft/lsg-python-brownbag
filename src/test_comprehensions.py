@@ -60,7 +60,8 @@ def test_modified_list() -> None:
 
     """
     items = ["Foo", "Bar", "Baz"]
-    assert [i.lower() for i in items] == ["foo", "bar", "baz"]
+    lowered = map(lambda i: i.lower(), items)
+    assert [i.lower() for i in items] == list(lowered)
 
 
 def test_dict_comprehension() -> None:
@@ -72,4 +73,8 @@ def test_dict_comprehension() -> None:
     """
     items = {i: f"i is {i}" for i in range(3)}
     assert list(items.keys()) == [0, 1, 2]
-    assert items == {0: "i is 0", 1: "i is 1", 2: "i is 2"}
+    assert items == {
+        0: "i is 0",
+        1: "i is 1",
+        2: "i is 2",
+    }
